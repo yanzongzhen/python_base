@@ -54,7 +54,7 @@ print('\n方式四：利用索引和%s配合')
 AN4 = '%s %s %s'%(str(li[0]),str(li[1]),str(li[2]))
 print("'%s %s %s'%(str(li[0]),str(li[1]),str(li[2])) -> 结果:",AN4)
 
-'人生'+',我用'.join([a,b])
+#'人生'+',我用'.join([a,b])
 
 #第三题
 Q3 = '''
