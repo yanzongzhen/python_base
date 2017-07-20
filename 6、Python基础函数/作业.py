@@ -74,8 +74,6 @@ Q4 = '''
 '''
 print(Q4)
 
-
-
 def fun_ex(*arg,**kwarg):
     d1 = {}
     li = list(arg)
@@ -106,8 +104,32 @@ e = fun_ex(*tu,**d2)
 print('\n元组比字典长度长')
 h = fun_ex(*t2,**di)    
     
+#讲解
 
+di = {'a':1,'b':2,'c':3}
+tu = (3,4,6)
 
-            
-            
-    
+def exchange(*arg,**kwarg):
+    print("输入的元祖",arg)
+    print('输入的字典',kwarg)
+    tu = list(arg)
+    di = kwarg
+    i = 0
+    for key in di.keys(): #不需要管字典的长度超出范围
+        if i < len(tu):  #保证元祖不会超出索引范围  
+            tu[i],di[key] = di[key],tu[i]
+        i += 1
+    return tuple(tu),di
+
+'''
+元祖不可变  转成列表  list(arg)
+step2:通过key改字典的值
+step3:怎么一次获得key for key in di.keys():
+step4:  怎么交换  tu[i],di[key] = di[key],tu[i]
+
+#长度不等时：
+保证元祖不会超出索引范围
+if i < len(tu)
+字典的长度超出范(不会超出key数量)
+for key in di.keys():
+'''
