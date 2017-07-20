@@ -74,14 +74,40 @@ Q4 = '''
 '''
 print(Q4)
 
-di = {'a':1,'b':2,'c':3}
-tu = (3,4,6)
+
 
 def fun_ex(*arg,**kwarg):
-    for i in arg:
-        print('ii',i)
-        for j in kwarg:
-            print('jj',j)
+    d1 = {}
+    li = list(arg)
+    print('原元组：',arg)
+    print('原字典：',kwarg)
+    for i in range(len(li)):
+        #print(i)
+        for j in range(len(kwarg)):
+            if i == j:
+                li[i] = list(kwarg.values())[j]
+                d1[list(kwarg.keys())[j]] = arg[i]
+            elif i < j:
+                d1[list(kwarg.keys())[j]] = list(kwarg.values())[j]
+            elif i > j:
+                li[i] = li[i]
+    print('交换后：',tuple(li))
+    print('交换后：',d1)
+
+di = {'a':1,'b':2,'c':3}
+tu = (3,4,6)
+d2 = {'a':1,'b':2,'c':3,'d':4}
+t2 = (8,9,10,11,12)
+
+print('元组和字典长度相同')
+f = fun_ex(*tu,**di)
+print('\n字典比元组长度长')
+e = fun_ex(*tu,**d2)
+print('\n元组比字典长度长')
+h = fun_ex(*t2,**di)    
+    
+
+
             
             
     
