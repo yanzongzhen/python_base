@@ -20,7 +20,8 @@ class RectMode:
             self.length = length
             self.width = width
         else:
-            print('类型错误')
+            #print('类型错误')
+            raise TypeError
 
     def cal_area(self):
         print('面积为：%d'%(self.length * self.width))
@@ -54,3 +55,7 @@ squera1.judge()
 squera2 = Squera(23,22)
 print('测试不是正方形：',end = '')
 squera2.judge()
+
+
+#return  在编辑器里面 返回值不会打印  在shell里面会打印，返回值可以付给变量
+#print  shell 和编辑器都可以

@@ -35,9 +35,12 @@ step7:往后走(1,2,3,4),(2,3,4,5)，(1,6,4,5)取(2,4,5,8)再依次和前面的�
 '''
 def insert_sort(li):
     for i in range(1,len(li)):
+       # print(i)
         print('第%s执行前'%(i),li)
         key = li[i]
+       # print(li[i])
         j = i - 1
+       #print(j)
         while j >= 0 and li[j][1] > key[1]:
             li[j + 1] = li[j]
             li[j] = key
@@ -64,6 +67,15 @@ def bubble_sort(li):
             if li[i][1] > li[j][1]:
                 li[i],li[j] = li[j],li[i]
         print('第%s执行后'%(i),li)
+    return li
+
+def bubble_sort(li):
+    for i in range(len(li)):   #从第一个开始
+        print('第%s次执行前'%(i),li)  #查看每次的结果
+        for j in range(0,len(li) - i -1):   #从i后面一个开始
+            if li[j][1] > li[j+1][1]:   #如果前面大于后面就交换元素
+                li[j],li[j+1] = li[j+1],li[j]   #每次会把最小的放到最前
+        print('第%s次执行后'%(i),li)
     return li
 
 #bubble_sort(li)        
