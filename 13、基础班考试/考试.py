@@ -9,14 +9,14 @@ Q1 = '''
           模式为：str2='abc'
           找出str1中模式出现的位置(6,9,12)
 '''
-print('\n第一题解答')
+#print('\n第一题解答')
 str1 = 'adhvahabcabcabcfjiaohgio'
 str2 = 'abc'
 def getindex(substr,str):
     count = 0
     li = []
     i = str1.count(str2)
-    print('先整体查询要求字符串的个数',i)
+    #print('先整体查询要求字符串的个数',i)
     while i > 0:
         index = str.find(substr)
         if index == -1:
@@ -30,7 +30,7 @@ def getindex(substr,str):
     return tuple(li)
                           
 testq1 = getindex(str2,str1)
-print('索引位置',testq1)
+#print('索引位置',testq1)
 
 Q2 = '''
 二、有时，我们会需要一连串等间距的数字（这在数据分析和进度控制等方面格外有用），例如：[0, 2, 4 , 6, 8]
@@ -91,6 +91,7 @@ def run_time(func):
         with open('timelog.txt','a+',encoding='utf8') as f:
             run_times = '函数:%s 运行时间为:%s'%(func.__name__,times)
             f.write(run_times+'\n'+'\n')
+ #           f.close()
         return back,times
     return new_fun
 @run_time
@@ -112,10 +113,9 @@ def bubble_sort(li):
             if li[j] > li[j+1]:   
                 li[j],li[j+1] = li[j+1],li[j]  
     return li
-
 #测试
-#exchange(*tu,**di)
-#bubble_sort(li)
+exchange(*tu,**di)
+bubble_sort(li)
 
 Q4 = '''
 四、字符串里面的count可以统计字符出现的次数，现在要求大家定义这样的一个类，
@@ -140,3 +140,5 @@ st1 = 'ababababasndndndndmfm'
 a = StrExtend(st1)       
 b = a.getcount()       
 #print('测试字符串%s\n测试结果%s'%(st1,b))
+
+
